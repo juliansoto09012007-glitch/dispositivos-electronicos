@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuestionario Futurista</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: #0a0a0f;
+      color: #00ffe5;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffe5;
+      font-size: 2.2rem;
+      text-shadow: 0 0 25px #00ffe5, 0 0 40px #0ff;
+      margin-bottom: 25px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: transparent;
+      padding: 20px;
+    }
+    .question {
+      margin-bottom: 25px;
+      padding: 15px;
+      border-radius: 15px;
+      background: #0d0d15;
+      box-shadow: 0 0 20px rgba(0, 255, 229, 0.4);
+    }
+    .question label.title {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #fff;
+      text-shadow: 0 0 10px #00ffe5;
+      font-size: 1.1rem;
+    }
+    .option {
+      display: block;
+      margin: 10px 0;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 2px solid #00ffe5;
+      background: #0a0a12;
+      color: #00ffe5;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+    .option:hover {
+      background: rgba(0, 255, 229, 0.1);
+      box-shadow: 0 0 12px #00ffe5;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+      display: none;
+    }
+    input[type="radio"]:checked + .option,
+    input[type="checkbox"]:checked + .option {
+      background: #00ffe5;
+      color: #000;
+      font-weight: bold;
+      box-shadow: 0 0 18px #00ffe5, 0 0 25px #0ff;
+    }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      font-size: 1.1em;
+      background: #00ffe5;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #00ffe5, 0 0 35px #0ff;
+      transition: all 0.3s ease;
+    }
+    .submit-btn:hover {
+      background: #00bbaa;
+      color: #fff;
+      box-shadow: 0 0 25px #00ffe5, 0 0 40px #0ff;
+    }
+    .success-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      color: #0f0;
+      font-size: 1.5rem;
+      z-index: 999;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cuestionario Futurista</h1>
+  <div class="container">
+    <form id="questionnaire">
+
+      <!-- 1 -->
+      <div class="question">
+        <label class="title">1. Género</label>
+        <input type="radio" id="g1" name="Género" value="Masculino"><label for="g1" class="option">Masculino</label>
+        <input type="radio" id="g2" name="Género" value="Femenino"><label for="g2" class="option">Femenino</label>
+      </div>
+
+      <!-- 2 -->
+      <div class="question">
+        <label class="title">2. Rango de edad</label>
+        <input type="radio" id="e1" name="Rango de edad" value="8-12"><label for="e1" class="option">8-12</label>
+        <input type="radio" id="e2" name="Rango de edad" value="12-16"><label for="e2" class="option">12-16</label>
+        <input type="radio" id="e3" name="Rango de edad" value="16-20"><label for="e3" class="option">16-20</label>
+        <input type="radio" id="e4" name="Rango de edad" value="20-24"><label for="e4" class="option">20-24</label>
+        <input type="radio" id="e5" name="Rango de edad" value="Mayor de 24"><label for="e5" class="option">Mayor de 24</label>
+      </div>
+
+      <!-- 3 -->
+      <div class="question">
+        <label class="title">3. Tiempo en aparatos de entretenimiento diario</label>
+        <input type="radio" id="t1" name="Tiempo" value="Menos de 1 hora"><label for="t1" class="option">Menos de 1 hora</label>
+        <input type="radio" id="t2" name="Tiempo" value="1-2 horas"><label for="t2" class="option">1-2 horas</label>
+        <input type="radio" id="t3" name="Tiempo" value="2-4 horas"><label for="t3" class="option">2-4 horas</label>
+        <input type="radio" id="t4" name="Tiempo" value="4-6 horas"><label for="t4" class="option">4-6 horas</label>
+        <input type="radio" id="t5" name="Tiempo" value="6 o más horas"><label for="t5" class="option">6 o más horas</label>
+      </div>
+
+      <!-- 4 -->
+      <div class="question">
+        <label class="title">4. Dispositivo más usado</label>
+        <input type="radio" id="d1" name="Dispositivo" value="Smartphone"><label for="d1" class="option">Smartphone</label>
+        <input type="radio" id="d2" name="Dispositivo" value="Laptop"><label for="d2" class="option">Laptop</label>
+        <input type="radio" id="d3" name="Dispositivo" value="Tablet"><label for="d3" class="option">Tablet</label>
+        <input type="radio" id="d4" name="Dispositivo" value="PC escritorio"><label for="d4" class="option">PC escritorio</label>
+        <input type="radio" id="d5" name="Dispositivo" value="Smartwatch"><label for="d5" class="option">Smartwatch</label>
+        <input type="radio" id="d6" name="Dispositivo" value="Consola videojuegos"><label for="d6" class="option">Consola videojuegos</label>
+        <input type="radio" id="d7" name="Dispositivo" value="Otros"><label for="d7" class="option">Otros</label>
+      </div>
+
+      <!-- 5 -->
+      <div class="question">
+        <label class="title">5. Horas de uso de dispositivos al día</label>
+        <input type="radio" id="h1" name="Horas" value="Menos de 2"><label for="h1" class="option">Menos de 2</label>
+        <input type="radio" id="h2" name="Horas" value="2-4"><label for="h2" class="option">2-4</label>
+        <input type="radio" id="h3" name="Horas" value="4-6"><label for="h3" class="option">4-6</label>
+        <input type="radio" id="h4" name="Horas" value="6-8"><label for="h4" class="option">6-8</label>
+        <input type="radio" id="h5" name="Horas" value="Más de 8"><label for="h5" class="option">Más de 8</label>
+      </div>
+
+      <!-- 6 -->
+      <div class="question">
+        <label class="title">6. Uso principal de dispositivos</label>
+        <input type="radio" id="u1" name="Uso" value="Comunicación"><label for="u1" class="option">Comunicación</label>
+        <input type="radio" id="u2" name="Uso" value="Entretenimiento"><label for="u2" class="option">Entretenimiento</label>
+        <input type="radio" id="u3" name="Uso" value="Trabajo/estudio"><label for="u3" class="option">Trabajo/estudio</label>
+        <input type="radio" id="u4" name="Uso" value="Finanzas/compras"><label for="u4" class="option">Finanzas/compras</label>
+        <input type="radio" id="u5" name="Uso" value="Noticias"><label for="u5" class="option">Noticias</label>
+      </div>
+
+      <!-- 7 -->
+      <div class="question">
+        <label class="title">7. Impacto en productividad (1-5)</label>
+        <input type="radio" id="p1" name="Productividad" value="1"><label for="p1" class="option">1</label>
+        <input type="radio" id="p2" name="Productividad" value="2"><label for="p2" class="option">2</label>
+        <input type="radio" id="p3" name="Productividad" value="3"><label for="p3" class="option">3</label>
+        <input type="radio" id="p4" name="Productividad" value="4"><label for="p4" class="option">4</label>
+        <input type="radio" id="p5" name="Productividad" value="5"><label for="p5" class="option">5</label>
+      </div>
+
+      <!-- 8 -->
+      <div class="question">
+        <label class="title">8. Lugar principal de uso</label>
+        <input type="radio" id="l1" name="Lugar" value="Casa"><label for="l1" class="option">Casa</label>
+        <input type="radio" id="l2" name="Lugar" value="Escuela/Universidad"><label for="l2" class="option">Escuela/Universidad</label>
+        <input type="radio" id="l3" name="Lugar" value="Trabajo"><label for="l3" class="option">Trabajo</label>
+        <input type="radio" id="l4" name="Lugar" value="Espacios públicos"><label for="l4" class="option">Espacios públicos</label>
+      </div>
+
+      <!-- 9 -->
+      <div class="question">
+        <label class="title">9. Dispositivos en el hogar</label>
+        <input type="radio" id="dh1" name="Hogar" value="Smartphone"><label for="dh1" class="option">Smartphone</label>
+        <input type="radio" id="dh2" name="Hogar" value="Laptop"><label for="dh2" class="option">Laptop</label>
+        <input type="radio" id="dh3" name="Hogar" value="Tablet"><label for="dh3" class="option">Tablet</label>
+        <input type="radio" id="dh4" name="Hogar" value="PC escritorio"><label for="dh4" class="option">PC escritorio</label>
+        <input type="radio" id="dh5" name="Hogar" value="Smart TV"><label for="dh5" class="option">Smart TV</label>
+        <input type="radio" id="dh6" name="Hogar" value="Consola videojuegos"><label for="dh6" class="option">Consola videojuegos</label>
+      </div>
+
+      <!-- 10 -->
+      <div class="question">
+        <label class="title">10. Dispositivos usados regularmente</label>
+        <input type="radio" id="dr1" name="Regulares" value="Smartphone"><label for="dr1" class="option">Smartphone</label>
+        <input type="radio" id="dr2" name="Regulares" value="Laptop"><label for="dr2" class="option">Laptop</label>
+        <input type="radio" id="dr3" name="Regulares" value="Tablet"><label for="dr3" class="option">Tablet</label>
+        <input type="radio" id="dr4" name="Regulares" value="PC escritorio"><label for="dr4" class="option">PC escritorio</label>
+        <input type="radio" id="dr5" name="Regulares" value="Smartwatch"><label for="dr5" class="option">Smartwatch</label>
+      </div>
+
+      <!-- 11 -->
+      <div class="question">
+        <label class="title">11. Frecuencia de revisión del smartphone</label>
+        <input type="radio" id="f1" name="Revisión" value="Cada pocos minutos"><label for="f1" class="option">Cada pocos minutos</label>
+        <input type="radio" id="f2" name="Revisión" value="Cada hora"><label for="f2" class="option">Cada hora</label>
+        <input type="radio" id="f3" name="Revisión" value="Pocas veces al día"><label for="f3" class="option">Pocas veces al día</label>
+        <input type="radio" id="f4" name="Revisión" value="Solo cuando lo necesito"><label for="f4" class="option">Solo cuando lo necesito</label>
+      </div>
+
+      <!-- 12 -->
+      <div class="question">
+        <label class="title">12. Momento de mayor uso diario</label>
+        <input type="radio" id="m1" name="Momento" value="Mañana"><label for="m1" class="option">Mañana</label>
+        <input type="radio" id="m2" name="Momento" value="Tarde"><label for="m2" class="option">Tarde</label>
+        <input type="radio" id="m3" name="Momento" value="Noche"><label for="m3" class="option">Noche</label>
+        <input type="radio" id="m4" name="Momento" value="Madrugada"><label for="m4" class="option">Madrugada</label>
+      </div>
+
+      <!-- 13 -->
+      <div class="question">
+        <label class="title">13. Sentimiento sin acceso a dispositivos</label>
+        <input type="radio" id="s1" name="Sentimiento" value="Ansiedad"><label for="s1" class="option">Ansiedad</label>
+        <input type="radio" id="s2" name="Sentimiento" value="Aburrimiento"><label for="s2" class="option">Aburrimiento</label>
+        <input type="radio" id="s3" name="Sentimiento" value="Tranquilidad"><label for="s3" class="option">Tranquilidad</label>
+        <input type="radio" id="s4" name="Sentimiento" value="Indiferencia"><label for="s4" class="option">Indiferencia</label>
+      </div>
+
+      <!-- 14 -->
+      <div class="question">
+        <label class="title">14. Afecta al ciclo de sueño</label>
+        <input type="radio" id="c1" name="Sueño" value="Sí"><label for="c1" class="option">Sí</label>
+        <input type="radio" id="c2" name="Sueño" value="No"><label for="c2" class="option">No</label>
+      </div>
+
+      <!-- 15 -->
+      <div class="question">
+        <label class="title">15. Comodidad al desconectarse un día (1-5)</label>
+        <input type="radio" id="co1" name="Desconexión" value="1"><label for="co1" class="option">1</label>
+        <input type="radio" id="co2" name="Desconexión" value="2"><label for="co2" class="option">2</label>
+        <input type="radio" id="co3" name="Desconexión" value="3"><label for="co3" class="option">3</label>
+        <input type="radio" id="co4" name="Desconexión" value="4"><label for="co4" class="option">4</label>
+        <input type="radio" id="co5" name="Desconexión" value="5"><label for="co5" class="option">5</label>
+      </div>
+
+      <!-- 16 -->
+      <div class="question">
+        <label class="title">16. Uso de asistentes de voz</label>
+        <input type="radio" id="av1" name="Asistentes" value="Sí"><label for="av1" class="option">Sí</label>
+        <input type="radio" id="av2" name="Asistentes" value="No"><label for="av2" class="option">No</label>
+      </div>
+
+      <!-- 17 -->
+      <div class="question">
+        <label class="title">17. Uso de apps de bienestar digital</label>
+        <input type="radio" id="bw1" name="Bienestar" value="Sí"><label for="bw1" class="option">Sí</label>
+        <input type="radio" id="bw2" name="Bienestar" value="No"><label for="bw2" class="option">No</label>
+      </div>
+
+      <!-- 18 -->
+      <div class="question">
+        <label class="title">18. Uso saludable de dispositivos</label>
+        <input type="radio" id="us1" name="Saludable" value="Sí"><label for="us1" class="option">Sí</label>
+        <input type="radio" id="us2" name="Saludable" value="No"><label for="us2" class="option">No</label>
+      </div>
+
+      <!-- 19 -->
+      <div class="question">
+        <label class="title">19. Tipo de contenido más consumido</label>
+        <input type="radio" id="cc1" name="Contenido" value="Redes sociales"><label for="cc1" class="option">Redes sociales</label>
+        <input type="radio" id="cc2" name="Contenido" value="Videojuegos"><label for="cc2" class="option">Videojuegos</label>
+        <input type="radio" id="cc3" name="Contenido" value="Series/películas"><label for="cc3" class="option">Series/películas</label>
+        <input type="radio" id="cc4" name="Contenido" value="Noticias"><label for="cc4" class="option">Noticias</label>
+        <input type="radio" id="cc5" name="Contenido" value="Educativo"><label for="cc5" class="option">Educativo</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Enviar Respuestas</button>
+    </form>
+  </div>
+
+  <div class="success-overlay" id="successOverlay">
+    ✅ ¡Tus respuestas fueron enviadas correctamente!
+  </div>
+
+  <script>
+  const form = document.getElementById('questionnaire');
+  const successOverlay = document.getElementById('successOverlay');
+
+  // 🚫 Revisar si ya se envió antes
+  if (localStorage.getItem("formEnviado") === "true") {
+    form.querySelectorAll("input, button").forEach(el => el.disabled = true);
+    successOverlay.style.display = 'flex';
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    fetch("https://script.google.com/macros/s/AKfycbyiuGxb14pOaaRYHcj-qLi4jPFLadAFtPDtKbqVb5oKfbzkmV4q8GvJgG-s48WBP1izkg/exec", {
+      method: "POST",
+      body: formData
+    })
+    .then(() => {
+      successOverlay.style.display = 'flex';
+      form.querySelectorAll("input, button").forEach(el => el.disabled = true);
+      localStorage.setItem("formEnviado", "true"); // ✅ bloquear futuros envíos
+    })
+    .catch(err => alert("Error: " + err));
+  });
+</script>
+</body>
+</html>
+
